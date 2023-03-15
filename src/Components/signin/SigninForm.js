@@ -6,48 +6,48 @@ import { FormGroup, Button } from "react-bootstrap";
 const SignInForm = (props) => {
     const validationSchema = Yup.object().shape({
         username: Yup.string()
-        .required("Required"),
+            .required("Required"),
         password: Yup.string()
-        .required("Required"),
+            .required("Required"),
     });
     console.log(props);
     return (
         <div className="form-wrapper">
-        <Formik {...props} validationSchema={validationSchema}>
-            <Form>
-            <br/>
-            Username
-            <br/>
-            <FormGroup>
-                <Field name="username" type="text"
-                    className="form-control" />
-                <ErrorMessage
-                name="username"
-                className="d-block invalid-feedback"
-                component="span"
-                />
-            </FormGroup>
-            <br/>
-            Password
-            <br/>
-            <FormGroup>
-                <Field name="password" type="password"
-                    className="form-control" />
-                <ErrorMessage
-                name="password"
-                className="d-block invalid-feedback"
-                component="span"
-                />
-            </FormGroup>
-            <br/>
-            <Button variant="danger" size="lg"
-                block="block" type="submit">
-                {props.children}
-            </Button>
-            </Form>
-        </Formik>
+            <Formik {...props} validationSchema={validationSchema}>
+                <Form>
+                    <br />
+                    Username
+                    <br />
+                    <FormGroup>
+                        <Field name="username" type="text"
+                            className="form-control" />
+                        <ErrorMessage
+                            name="username"
+                            className="d-block invalid-feedback"
+                            component="span"
+                        />
+                    </FormGroup>
+                    <br />
+                    Password
+                    <br />
+                    <FormGroup>
+                        <Field name="password" type="password"
+                            className="form-control" />
+                        <ErrorMessage
+                            name="password"
+                            className="d-block invalid-feedback"
+                            component="span"
+                        />
+                    </FormGroup>
+                    <br />
+                    <Button variant="danger" size="lg"
+                        block="block" type="submit">
+                        {props.children}
+                    </Button>
+                </Form>
+            </Formik>
         </div>
-        );
-    };
-    
-    export default SignInForm;
+    );
+};
+
+export default SignInForm;

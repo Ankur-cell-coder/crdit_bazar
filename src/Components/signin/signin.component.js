@@ -3,35 +3,32 @@ import axios from 'axios';
 import SignInForm from "./SigninForm";
 
 const SignIn = () => {
-    const [formValues] = useState({ username: '', password: ''});
+    const [formValues] = useState({ username: '', password: '' });
 
     const onSubmit = signInDto => {
-        const headers = {
-            'Content-Type': 'application/json'
-        }
+
         axios.post(
             '/api/admin/signin',
-            signInDto,
-            {headers}
+            signInDto
         )
-        .then(res => {
-            if (res.status === 200) {
-                localStorage.setItem("JWT", res.data.accessToken);
-                alert('Logged in successfully');
-                window.location.reload();
-            } else
-                Promise.reject()
-        })
-        .catch(err => alert('Something went wrong'));
+            .then(res => {
+                if (res.status === 200) {
+                    localStorage.setItem("JWT", res.data.accessToken);
+                    alert('Logged in successfully');
+                    window.location.reload();
+                } else
+                    Promise.reject()
+            })
+            .catch(err => alert('Something went wrong'));
     };
 
-    return(
-        <SignInForm initialValues={formValues} 
-          onSubmit={onSubmit} 
-          enableReinitialize>
-          Sign In
+    return (
+        <SignInForm initialValues={formValues}
+            onSubmit={onSubmit}
+            enableReinitialize>
+            Sign In
         </SignInForm>
-      );
+    );
 }
 
 export default SignIn

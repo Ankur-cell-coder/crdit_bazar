@@ -3,7 +3,7 @@ import axios from 'axios';
 import SellerPageForm from "./SellerPageForm";
 
 const SellerPage = () => {
-    const [formValues] = useState({ referenceNumber: ''})
+    const [formValues] = useState({ referenceNumber: '' })
 
     const onSubmit = referenceDto => {
         const headers = {
@@ -13,24 +13,24 @@ const SellerPage = () => {
             // Where?
             '',
             referenceDto,
-            {headers}
+            { headers }
         )
-        .then(res => {
-            if (res.status === 200) {
-                
-            } else
-                Promise.reject()
-        })
-        .catch(err => alert('Something went wrong'))
+            .then(res => {
+                if (res.status === 200) {
+
+                } else
+                    Promise.reject()
+            })
+            .catch(err => alert('Something went wrong'))
     }
 
-    return(
-        <SellerPageForm initialValues={formValues} 
-          onSubmit={onSubmit} 
-          enableReinitialize>
-          Search
+    return (
+        <SellerPageForm initialValues={formValues}
+            onSubmit={onSubmit}
+            enableReinitialize>
+            Search
         </SellerPageForm>
-      )
+    )
 }
 
 export default SellerPage
