@@ -7,8 +7,10 @@ import {
 } from "react-router-dom";
 import './App.css';
 import SellerPage from './Components/seller/sellerpage.component';
-
+import { useState } from 'react';
 import SignIn from "./Components/signin/signin.component";
+import SellerPageForm from './Components/seller/SellerPageForm';
+import TaxInvoice from './Components/seller/TaxInvoice';
 
 const logout = function () {
   localStorage.removeItem("JWT");
@@ -17,6 +19,7 @@ const logout = function () {
 
 const App = () => {
   let loggedIn = false;
+  const [option,setOption]=useState("seller");
   (function () {
     let authToken = localStorage.getItem("JWT");
     if (authToken === null) {
@@ -30,6 +33,9 @@ const App = () => {
       axios.defaults.headers.common.Authorization = `Bearer ${authToken}`;
     }
   })();
+   
+  
+
   return (
     <Router>
       <div className="App">
@@ -42,6 +48,15 @@ const App = () => {
                   Credit Bazaar
                 </Link>
               </Navbar.Brand>
+            
+              <div>
+                <select onChange={(e)=>{setOption(e.currentTarget.value)}}>
+                  <option value="seller">seller</option>
+                  <option value="buyers">buyers</option>
+                  <option value="managers">managers</option>
+                </select>
+              </div>
+
             </Container>
             {loggedIn && <Nav className="justify-content-end">
               <Nav>
@@ -52,6 +67,12 @@ const App = () => {
               </Nav>
             </Nav>}
           </Navbar>
+
+           <Routes>
+            <Route path="/invoice" element={<TaxInvoice/>} />
+          </Routes> 
+
+
         </header>
 
         <Container>

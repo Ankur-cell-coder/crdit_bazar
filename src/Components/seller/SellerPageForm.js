@@ -2,13 +2,24 @@ import React from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FormGroup, Button } from "react-bootstrap";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SellerPageForm = (props) => {
     const validationSchema = Yup.object().shape({
         referenceNumber: Yup.string()
             .required("Required")
     });
-    console.log(props);
+    const [Invoice,setInvoice]=useState("");
+    
+    const Navigate = useNavigate();
+
+    const handleSubmit=()=>{
+        Navigate('invoice');
+    }
+
+
+    console.log(Invoice,"invoice number");
     return (
         <div className="form-wrapper">
             <Formik {...props} validationSchema={validationSchema}>
@@ -18,6 +29,8 @@ const SellerPageForm = (props) => {
                     <br />
                     <FormGroup>
                         <Field name="referenceNumber" type="text"
+                            value={Invoice}
+                            onChange = {e => setInvoice(e.currentTarget.value)}
                             className="form-control" />
                         <ErrorMessage
                             name="referenceNumber"
@@ -26,7 +39,7 @@ const SellerPageForm = (props) => {
                         />
                     </FormGroup>
                     <br />
-                    <Button variant="danger" size="lg"
+                    <Button onClick={handleSubmit} variant="danger" size="lg"
                         block="block" type="submit">
                         {props.children}
                     </Button>
