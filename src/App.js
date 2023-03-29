@@ -11,6 +11,8 @@ import { useState } from 'react';
 import SignIn from "./Components/signin/signin.component";
 import SellerPageForm from './Components/seller/SellerPageForm';
 import TaxInvoice from './Components/seller/TaxInvoice';
+import Order from './Components/seller/Order';
+import Acknowledgement from './Components/seller/Acknowledgement';
 
 const logout = function () {
   localStorage.removeItem("JWT");
@@ -49,6 +51,11 @@ const App = () => {
                 </Link>
               </Navbar.Brand>
             
+             
+
+            </Container>
+            {loggedIn && <Nav className="justify-content-end">
+              <Nav>
               <div>
                 <select onChange={(e)=>{setOption(e.currentTarget.value)}}>
                   <option value="seller">seller</option>
@@ -56,10 +63,6 @@ const App = () => {
                   <option value="managers">managers</option>
                 </select>
               </div>
-
-            </Container>
-            {loggedIn && <Nav className="justify-content-end">
-              <Nav>
                 <Link to={"/"} onClick={logout}
                   className="nav-link">
                   Logout
@@ -70,6 +73,8 @@ const App = () => {
 
            <Routes>
             <Route path="/invoice" element={<TaxInvoice/>} />
+            <Route path="/invoice/order" element={<Order/>}/>
+            <Route path="/invoice/order/acknowledgement" element={<Acknowledgement/>}/>
           </Routes> 
 
 

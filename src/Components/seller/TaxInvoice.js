@@ -1,8 +1,12 @@
 import React from 'react'
 import data from '../sellerinvoice.json';
 import styled from "styled-components";
+import { useNavigate } from 'react-router-dom';
 
 function TaxInvoice() {
+
+    const Navigate=useNavigate();
+
     return (
         <Invoice1>
             <div className='invoice'>
@@ -124,7 +128,8 @@ function TaxInvoice() {
 
                 <div className='button1' style={{marginLeft:"250px",height:"40px",width:"250px",marginTop:"250px"}}>
                     <button className='button2'>Request for Offer</button>
-                    <button className='button2' style={{ marginTop: "10px",width:"185px" }}>Go back</button>
+                    <button className='button2' onClick={()=>Navigate('order')} style={{ marginTop: "10px",width:"185px" }}>Next</button>
+                    <button className='button2' onClick={()=>Navigate(-1)} style={{ marginTop: "10px",width:"185px" }}>Go back</button>
                 </div>
 
             </div>
