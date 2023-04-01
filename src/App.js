@@ -13,6 +13,7 @@ import SellerPageForm from './Components/seller/SellerPageForm';
 import TaxInvoice from './Components/seller/TaxInvoice';
 import Order from './Components/seller/Order';
 import Acknowledgement from './Components/seller/Acknowledgement';
+import { useNavigate } from "react-router-dom";
 
 const logout = function () {
   localStorage.removeItem("JWT");
@@ -21,6 +22,7 @@ const logout = function () {
 
 const App = () => {
   let loggedIn = false;
+  
   const [option,setOption]=useState("seller");
   (function () {
     let authToken = localStorage.getItem("JWT");
@@ -33,6 +35,7 @@ const App = () => {
       and we can use their token to send the requests. */
       loggedIn = true;
       axios.defaults.headers.common.Authorization = `Bearer ${authToken}`;
+
     }
   })();
    
@@ -72,9 +75,9 @@ const App = () => {
           </Navbar>
 
            <Routes>
-            <Route path="/invoice" element={<TaxInvoice/>} />
-            <Route path="/invoice/order" element={<Order/>}/>
-            <Route path="/invoice/order/acknowledgement" element={<Acknowledgement/>}/>
+            <Route exact path="/invoice" element={loggedIn ? <TaxInvoice/> : <SignIn />} />
+            <Route exact path="/invoice/order" element={loggedIn ?<Order/> : <SignIn />}/>
+            <Route exact path="/invoice/order/acknowledgement" element={loggedIn ?<Acknowledgement/> : <SignIn />}/>
           </Routes> 
 
 
