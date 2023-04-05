@@ -1,15 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import styled from "styled-components";
 
 import { useNavigate } from 'react-router-dom';
 
-function Order() {
+function Order(props) {
 
     const [agree, setAgree] = useState(false);
     const [opacity, setOpacity] = useState(0.5);
 
 
-    const Navigate = useNavigate();
+    const [role,setRole]=useState(props.option);
+    const Navigate=useNavigate();
+    
+    useEffect(()=>{
+      if(props.option!==role)
+      {
+        Navigate('/')
+      }
+    })
 
     const checkboxHandler = () => {
         setAgree(!agree);

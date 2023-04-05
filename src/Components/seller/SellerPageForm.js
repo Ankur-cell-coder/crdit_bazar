@@ -15,7 +15,14 @@ const SellerPageForm = (props) => {
     const Navigate = useNavigate();
 
     const handleSubmit=()=>{
+        if(Invoice)
+        {
         Navigate('invoice');
+        }
+        else
+        {
+            alert('please enter invoice number');
+        }
     }
 
 

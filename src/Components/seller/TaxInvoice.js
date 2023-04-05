@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import data from '../sellerinvoice.json';
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 
-function TaxInvoice() {
-
+function TaxInvoice(props) {
+    
+    const [role,setRole]=useState(props.option);
     const Navigate=useNavigate();
+    
+    useEffect(()=>{
+      if(props.option!==role)
+      {
+        Navigate('/')
+      }
+    })
 
     return (
         <Invoice1>
@@ -18,7 +26,7 @@ function TaxInvoice() {
                      <div>Ack No:{data.Ack_No}</div>
                     <div>Ack Date:{data.Ack_Date}</div>
                      </div>
-                    
+                     
 
                     <div className='part1' style={{marginLeft:"10px",marginTop:"10px"}}>
 

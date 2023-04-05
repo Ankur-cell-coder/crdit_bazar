@@ -39,7 +39,7 @@ const App = () => {
     }
   })();
    
-  
+ 
 
   return (
     <Router>
@@ -73,11 +73,11 @@ const App = () => {
               </Nav>
             </Nav>}
           </Navbar>
-
+            
            <Routes>
-            <Route exact path="/invoice" element={loggedIn ? <TaxInvoice/> : <SignIn />} />
-            <Route exact path="/invoice/order" element={loggedIn ?<Order/> : <SignIn />}/>
-            <Route exact path="/invoice/order/acknowledgement" element={loggedIn ?<Acknowledgement/> : <SignIn />}/>
+            <Route exact path="/invoice" element={loggedIn ? <TaxInvoice option={option}/> : <SignIn />} />
+            <Route exact path="/invoice/order" element={loggedIn ?<Order option={option}/> : <SignIn />}/>
+            <Route exact path="/invoice/order/acknowledgement" element={loggedIn ?<Acknowledgement option={option}/> : <SignIn />}/>
           </Routes> 
 
 

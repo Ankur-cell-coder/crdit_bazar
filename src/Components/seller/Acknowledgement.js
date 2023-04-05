@@ -1,7 +1,20 @@
 import React from 'react'
 import styled from "styled-components";
+import  { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
-function Acknowledgement() {
+function Acknowledgement(props) {
+
+  const [role,setRole]=useState(props.option);
+  const Navigate=useNavigate();
+  
+  useEffect(()=>{
+    if(props.option!==role)
+    {
+      Navigate('/')
+    }
+  })
+
   return (
     <Acknowledgement1>
       <div className='acknowl'>
