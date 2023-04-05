@@ -25,9 +25,9 @@ const FinancialPage = (props) => {
     }
 
     return (
-        <FinancialPageForm initialValues={formValues}
+        <FinancialPageForm option={props.option} initialValues={formValues}
             onSubmit={onSubmit}
-            enableReinitialize option={props.option}>
+            enableReinitialize >
             Search
         </FinancialPageForm>
     )

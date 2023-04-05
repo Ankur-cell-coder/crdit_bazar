@@ -25,7 +25,7 @@ const BuyerPage = () => {
     }
 
     return (
-        <BuyerPageForm initialValues={formValues}
+        <BuyerPageForm option={props.option} initialValues={formValues}
             onSubmit={onSubmit}
             enableReinitialize>
             Search

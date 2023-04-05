@@ -3,6 +3,7 @@ import axios from 'axios';
 import SellerPageForm from "./SellerPageForm";
 
 const SellerPage = (props) => {
+    console.log(props.option+"data about sfb");
     const [formValues] = useState({ referenceNumber: '' })
     
     const onSubmit = referenceDto => {
@@ -25,9 +26,9 @@ const SellerPage = (props) => {
     }
 
     return (
-        <SellerPageForm initialValues={formValues}
+        <SellerPageForm option={props.option} initialValues={formValues}
             onSubmit={onSubmit}
-            enableReinitialize option={props.option}>
+            enableReinitialize>
             Search
         </SellerPageForm>
     )

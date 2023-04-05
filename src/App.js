@@ -96,9 +96,9 @@ const App = () => {
             <Route exact path="/financialinvoice/order" element={loggedIn ? <FinancialOrder option={option} /> : <SignIn />} />
             <Route exact path="/financialinvoice/order/acknowledgement" element={loggedIn ? <FinancialAcknowledgement option={option} /> : <SignIn />} />
 
-            <Route exact path="/buyerinvoice" element={loggedIn ? <BuyersTaxInvoice option={option} /> : <SignIn />} />
-            <Route exact path="/buyerinvoice/order" element={loggedIn ? <BuyersOrder option={option} /> : <SignIn />} />
-            <Route exact path="/buyerinvoice/order/acknowledgement" element={loggedIn ? <BuyersAcknowledgement option={option} /> : <SignIn />} />
+            <Route exact path="/buyersinvoice" element={loggedIn ? <BuyersTaxInvoice option={option} /> : <SignIn />} />
+            <Route exact path="/buyersinvoice/order" element={loggedIn ? <BuyersOrder option={option} /> : <SignIn />} />
+            <Route exact path="/buyersinvoice/order/acknowledgement" element={loggedIn ? <BuyersAcknowledgement option={option} /> : <SignIn />} />
 
           </Routes>
 

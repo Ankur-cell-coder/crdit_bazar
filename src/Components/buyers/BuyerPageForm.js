@@ -17,7 +17,20 @@ const BuyersPageForm = (props) => {
     const handleSubmit=()=>{
         if(Invoice)
         {
-        Navigate('buyersinvoice');
+            if(props.option=='seller')
+            {
+              Navigate('sellerinvoice');
+            }
+    
+            if(props.option=='buyers')
+            {
+              Navigate('buyersinvoice');
+            }
+    
+            if(props.option=='financial')
+            {
+              Navigate('financialinvoice');
+            }
         }
         else
         {

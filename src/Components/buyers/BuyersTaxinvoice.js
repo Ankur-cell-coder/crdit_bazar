@@ -19,7 +19,7 @@ function BuyersTaxInvoice(props) {
         <BuyersInvoice1>
             <div className='invoice'>
                 <div className='detail' style={{height:"630px",width:"760px",background:"#E8E8E8"}}>
-                     <div className='heading' style={{marginLeft:"350px"}}>Tax Invoice</div>
+                     <div className='heading' style={{marginLeft:"350px"}}>Tax Invoice Buyers</div>
                      <br/>
                      <div className='heading2'>
                      <div>IRN:{data.IRN}</div>

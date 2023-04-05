@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SellerPageForm = (props) => {
+    console.log(props.option);
     const validationSchema = Yup.object().shape({
         referenceNumber: Yup.string()
             .required("Required")
@@ -17,7 +18,21 @@ const SellerPageForm = (props) => {
     const handleSubmit=()=>{
         if(Invoice)
         {
-        Navigate('sellerinvoice');
+        if(props.option=='seller')
+        {
+          Navigate('sellerinvoice');
+        }
+
+        if(props.option=='buyers')
+        {
+          Navigate('buyersinvoice');
+        }
+
+        if(props.option=='financial')
+        {
+          Navigate('financialinvoice');
+        }
+       
         }
         else
         {
