@@ -13,7 +13,7 @@ import SellerPageForm from './Components/seller/SellerPageForm';
 import TaxInvoice from './Components/seller/TaxInvoice';
 import Order from './Components/seller/Order';
 import Acknowledgement from './Components/seller/Acknowledgement';
-import { useNavigate } from "react-router-dom";
+
 
 const logout = function () {
   localStorage.removeItem("JWT");
@@ -63,7 +63,7 @@ const App = () => {
                 <select onChange={(e)=>{setOption(e.currentTarget.value)}}>
                   <option value="seller">seller</option>
                   <option value="buyers">buyers</option>
-                  <option value="managers">managers</option>
+                  <option value="financial">financial</option>
                 </select>
               </div>
                 <Link to={"/"} onClick={logout}
