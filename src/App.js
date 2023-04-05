@@ -72,11 +72,10 @@ const App = () => {
             {loggedIn && <Nav className="justify-content-end">
               <Nav>
                 <div>
-                  <select onChange={e => handleChange(e)}>
-
-                    <option value="seller">seller</option>
-                    <option value="buyers">buyers</option>
-                    <option value="financial">financial</option>
+                  <select style={{border:"2px solid #ec9006",width:"200px",height:"40px",background:"white",marginRight:"100px"}} onChange={e => handleChange(e)}>
+                    <option value="seller">Seller</option>
+                    <option value="buyers">Buyer</option>
+                    <option value="financial">Financial</option>
                   </select>
                 </div>
                 <Link to={"/"} onClick={logout}

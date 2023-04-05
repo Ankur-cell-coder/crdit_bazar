@@ -18,7 +18,7 @@ function SellerAcknowledgement(props) {
   return (
     <SellerAcknowledgement1>
       <div className='acknowl'>
-        <h5>Acknowledgement</h5>
+        <h5>Acknowledgement seller</h5>
       </div>
       <div className='main_content'>
         <div>

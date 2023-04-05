@@ -18,7 +18,7 @@ function FinancialAcknowledgement(props) {
   return (
     <FinancialAcknowledgement1>
       <div className='acknowl'>
-        <h5>Acknowledgement</h5>
+        <h5>Acknowledgement financial</h5>
       </div>
       <div className='main_content'>
         <div>
