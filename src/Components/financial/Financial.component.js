@@ -1,8 +1,8 @@
 import { useState } from "react"
 import axios from 'axios';
-import SellerPageForm from "./SellerPageForm";
+import FinancialPageForm from "./FinancialPageForm";
 
-const SellerPage = (props) => {
+const FinancialPage = (props) => {
     const [formValues] = useState({ referenceNumber: '' })
     
     const onSubmit = referenceDto => {
@@ -25,12 +25,12 @@ const SellerPage = (props) => {
     }
 
     return (
-        <SellerPageForm initialValues={formValues}
+        <FinancialPageForm initialValues={formValues}
             onSubmit={onSubmit}
             enableReinitialize option={props.option}>
             Search
-        </SellerPageForm>
+        </FinancialPageForm>
     )
 }
 
-export default SellerPage
+export default FinancialPage

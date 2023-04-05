@@ -3,16 +3,24 @@ import { Nav, Navbar, Container, Row, Col }
   from "react-bootstrap";
 import {
   BrowserRouter as Router, Routes,
-  Route, Link
+  Route, Link, Navigate
 } from "react-router-dom";
 import './App.css';
 import SellerPage from './Components/seller/sellerpage.component';
 import { useState } from 'react';
 import SignIn from "./Components/signin/signin.component";
-import SellerPageForm from './Components/seller/SellerPageForm';
-import TaxInvoice from './Components/seller/TaxInvoice';
-import Order from './Components/seller/Order';
-import Acknowledgement from './Components/seller/Acknowledgement';
+
+import SellerTaxInvoice from './Components/seller/SellerTaxInvoice';
+import SellerOrder from './Components/seller/SellerOrder';
+import SellerAcknowledgement from './Components/seller/SellerAcknowledgement';
+
+import BuyersTaxInvoice from './Components/buyers/BuyersTaxinvoice';
+import BuyersOrder from './Components/buyers/BuyersOrder';
+import BuyersAcknowledgement from './Components/buyers/BuyersAcknowledgement';
+
+import FinancialAcknowledgement from './Components/financial/FinancialAcknowledgement';
+import FinancialOrder from './Components/financial/FinancialOrder';
+import FinancialTaxInvoice from './Components/financial/FinancialTaxinvoice';
 
 
 const logout = function () {
@@ -22,8 +30,8 @@ const logout = function () {
 
 const App = () => {
   let loggedIn = false;
-  
-  const [option,setOption]=useState("seller");
+
+  const [option, setOption] = useState("seller");
   (function () {
     let authToken = localStorage.getItem("JWT");
     if (authToken === null) {
@@ -38,8 +46,12 @@ const App = () => {
 
     }
   })();
-   
- 
+
+
+  const handleChange = (e) => {
+    setOption(e.currentTarget.value);
+    // console.log('change');
+  }
 
   return (
     <Router>
@@ -53,19 +65,20 @@ const App = () => {
                   Credit Bazaar
                 </Link>
               </Navbar.Brand>
-            
-             
+
+
 
             </Container>
             {loggedIn && <Nav className="justify-content-end">
               <Nav>
-              <div>
-                <select onChange={(e)=>{setOption(e.currentTarget.value)}}>
-                  <option value="seller">seller</option>
-                  <option value="buyers">buyers</option>
-                  <option value="financial">financial</option>
-                </select>
-              </div>
+                <div>
+                  <select onChange={e => handleChange(e)}>
+
+                    <option value="seller">seller</option>
+                    <option value="buyers">buyers</option>
+                    <option value="financial">financial</option>
+                  </select>
+                </div>
                 <Link to={"/"} onClick={logout}
                   className="nav-link">
                   Logout
@@ -73,23 +86,31 @@ const App = () => {
               </Nav>
             </Nav>}
           </Navbar>
-            
-           <Routes>
-            <Route exact path="/invoice" element={loggedIn ? <TaxInvoice option={option}/> : <SignIn />} />
-            <Route exact path="/invoice/order" element={loggedIn ?<Order option={option}/> : <SignIn />}/>
-            <Route exact path="/invoice/order/acknowledgement" element={loggedIn ?<Acknowledgement option={option}/> : <SignIn />}/>
-          </Routes> 
+
+          <Routes>
+            <Route exact path="/sellerinvoice" element={loggedIn ? <SellerTaxInvoice option={option} /> : <SignIn />} />
+            <Route exact path="/sellerinvoice/order" element={loggedIn ? <SellerOrder option={option} /> : <SignIn />} />
+            <Route exact path="/sellerinvoice/order/acknowledgement" element={loggedIn ? <SellerAcknowledgement option={option} /> : <SignIn />} />
+
+            <Route exact path="/financialinvoice" element={loggedIn ? <FinancialTaxInvoice option={option} /> : <SignIn />} />
+            <Route exact path="/financialinvoice/order" element={loggedIn ? <FinancialOrder option={option} /> : <SignIn />} />
+            <Route exact path="/financialinvoice/order/acknowledgement" element={loggedIn ? <FinancialAcknowledgement option={option} /> : <SignIn />} />
+
+            <Route exact path="/buyerinvoice" element={loggedIn ? <BuyersTaxInvoice option={option} /> : <SignIn />} />
+            <Route exact path="/buyerinvoice/order" element={loggedIn ? <BuyersOrder option={option} /> : <SignIn />} />
+            <Route exact path="/buyerinvoice/order/acknowledgement" element={loggedIn ? <BuyersAcknowledgement option={option} /> : <SignIn />} />
+
+          </Routes>
 
 
         </header>
-
         <Container>
           <Row>
             <Col md={12}>
               <div className="wrapper">
                 <Routes>
                   <Route exact path="/"
-                    element={loggedIn ? <SellerPage /> : <SignIn />} />
+                    element={loggedIn ? <SellerPage option={option} /> : <SignIn />} />
                 </Routes>
               </div>
             </Col>

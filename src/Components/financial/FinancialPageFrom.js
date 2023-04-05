@@ -5,7 +5,7 @@ import { FormGroup, Button } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SellerPageForm = (props) => {
+const FinancialPageForm = (props) => {
     const validationSchema = Yup.object().shape({
         referenceNumber: Yup.string()
             .required("Required")
@@ -17,14 +17,16 @@ const SellerPageForm = (props) => {
     const handleSubmit=()=>{
         if(Invoice)
         {
-        Navigate('sellerinvoice');
+        Navigate('financialinvoice');
         }
         else
         {
             alert('please enter invoice number');
         }
     }
-   
+
+
+    console.log(Invoice,"invoice number");
     return (
         <div className="form-wrapper">
             <Formik {...props} validationSchema={validationSchema}>
@@ -54,4 +56,4 @@ const SellerPageForm = (props) => {
     );
 };
 
-export default SellerPageForm;
+export default FinancialPageForm;

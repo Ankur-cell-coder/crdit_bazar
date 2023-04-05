@@ -3,7 +3,7 @@ import styled from "styled-components";
 import  { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-function Acknowledgement(props) {
+function SellerAcknowledgement(props) {
 
   const [role,setRole]=useState(props.option);
   const Navigate=useNavigate();
@@ -16,7 +16,7 @@ function Acknowledgement(props) {
   })
 
   return (
-    <Acknowledgement1>
+    <SellerAcknowledgement1>
       <div className='acknowl'>
         <h5>Acknowledgement</h5>
       </div>
@@ -35,13 +35,13 @@ function Acknowledgement(props) {
           Thank you for choosing [Trade Company Name] as your trade partner. We look forward to serving you now and in the future.
         </div>
       </div>
-    </Acknowledgement1>
+    </SellerAcknowledgement1>
   )
 }
 
-export default Acknowledgement;
+export default SellerAcknowledgement;
 
-const Acknowledgement1 = styled.div`
+const SellerAcknowledgement1 = styled.div`
 
 padding: 4em 4em 0em;
 

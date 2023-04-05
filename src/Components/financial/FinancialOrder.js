@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { useNavigate } from 'react-router-dom';
 
-function Order(props) {
+function FinancialOrder(props) {
 
     const [agree, setAgree] = useState(false);
     const [opacity, setOpacity] = useState(0.5);
@@ -30,9 +30,9 @@ function Order(props) {
     }
 
     return (
-        <Order1>
+        <FinancialOrder1>
             <div>
-                <h6>Order Confirmation</h6>
+                <h6>Order Confirmation Financial</h6>
                 <div>Order ID: 123456789 Order Date/Time: February 28, 2023 at 10:15 AM EST Order Duration: 20-30 days from placing the offer</div>
                 <h6>Here are the details of your order:</h6>
                 <div>
@@ -53,14 +53,14 @@ function Order(props) {
                 <label htmlFor="agree"> By accepting these terms and conditions, you acknowledge that you have read, understood, and agreed to be bound by them in connection with any transaction on this trade page.</label>
             </div>
             <button className='button1' disabled={!agree} style={{ marginLeft: "580px", opacity }} onClick={() => Navigate('acknowledgement')}>Confirm Button</button>
-        </Order1>
+        </FinancialOrder1>
 
     )
 }
 
-export default Order;
+export default FinancialOrder;
 
-const Order1 = styled.div`
+const FinancialOrder1 = styled.div`
 
 padding: 2em 4em 0em;
 

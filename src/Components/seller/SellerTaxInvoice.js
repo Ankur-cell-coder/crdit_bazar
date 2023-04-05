@@ -3,7 +3,7 @@ import data from '../sellerinvoice.json';
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 
-function TaxInvoice(props) {
+function SellerTaxInvoice(props) {
     
     const [role,setRole]=useState(props.option);
     const Navigate=useNavigate();
@@ -16,10 +16,10 @@ function TaxInvoice(props) {
     })
 
     return (
-        <Invoice1>
+        <SellerInvoice1>
             <div className='invoice'>
                 <div className='detail' style={{height:"630px",width:"760px",background:"#E8E8E8"}}>
-                     <div className='heading' style={{marginLeft:"350px"}}>Tax Invoice</div>
+                     <div className='heading' style={{marginLeft:"350px"}}>Tax Invoice Seller</div>
                      <br/>
                      <div className='heading2'>
                      <div>IRN:{data.IRN}</div>
@@ -141,13 +141,13 @@ function TaxInvoice(props) {
                 </div>
 
             </div>
-        </Invoice1>
+        </SellerInvoice1>
     )
 }
 
-export default TaxInvoice;
+export default SellerTaxInvoice;
 
-const Invoice1 = styled.div`
+const SellerInvoice1 = styled.div`
 
 padding: 2em 4em 0em;
 
