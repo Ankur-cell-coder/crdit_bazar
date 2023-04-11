@@ -3,9 +3,9 @@ import axios from 'axios';
 import SellerPageForm from "./SellerPageForm";
 
 const SellerPage = (props) => {
-    console.log(props.option+"data about sfb");
+    console.log(props.option + "data about sfb");
     const [formValues] = useState({ referenceNumber: '' })
-    
+
     const onSubmit = referenceDto => {
         const headers = {
             'Content-Type': 'application/json'
@@ -24,7 +24,6 @@ const SellerPage = (props) => {
             })
             .catch(err => alert('Something went wrong'))
     }
-
     return (
         <SellerPageForm option={props.option} initialValues={formValues}
             onSubmit={onSubmit}

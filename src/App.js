@@ -57,6 +57,7 @@ const App = () => {
     <Router>
       <div className="App">
         <header className="App-header">
+          
           <Navbar bg="dark" variant="dark">
             <Container>
               <Navbar.Brand>
@@ -70,6 +71,7 @@ const App = () => {
 
             </Container>
             {loggedIn && <Nav className="justify-content-end">
+              
               <Nav>
                 <div>
                   <select style={{border:"2px solid #ec9006",width:"200px",height:"40px",background:"white",marginRight:"100px"}} onChange={e => handleChange(e)}>
@@ -83,7 +85,8 @@ const App = () => {
                   Logout
                 </Link>
               </Nav>
-            </Nav>}
+            </Nav>
+            }
           </Navbar>
 
           <Routes>

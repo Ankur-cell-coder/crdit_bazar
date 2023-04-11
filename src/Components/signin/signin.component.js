@@ -2,6 +2,7 @@ import { useState } from "react"
 import axios from 'axios';
 import SignInForm from "./SigninForm";
 
+
 const SignIn = () => {
     const [formValues] = useState({ username: '', password: '' });
 
@@ -26,7 +27,7 @@ const SignIn = () => {
         <SignInForm initialValues={formValues}
             onSubmit={onSubmit}
             enableReinitialize>
-            Sign In
+            Log in
         </SignInForm>
     );
 }

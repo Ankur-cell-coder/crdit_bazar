@@ -10,36 +10,31 @@ const BuyersPageForm = (props) => {
         referenceNumber: Yup.string()
             .required("Required")
     });
-    const [Invoice,setInvoice]=useState("");
-    
+    const [Invoice, setInvoice] = useState("");
+
     const Navigate = useNavigate();
 
-    const handleSubmit=()=>{
-        if(Invoice)
-        {
-            if(props.option=='seller')
-            {
-              Navigate('sellerinvoice');
+    const handleSubmit = () => {
+        if (Invoice) {
+            if (props.option == 'seller') {
+                Navigate('sellerinvoice');
             }
-    
-            if(props.option=='buyers')
-            {
-              Navigate('buyersinvoice');
+
+            if (props.option == 'buyers') {
+                Navigate('buyersinvoice');
             }
-    
-            if(props.option=='financial')
-            {
-              Navigate('financialinvoice');
+
+            if (props.option == 'financial') {
+                Navigate('financialinvoice');
             }
         }
-        else
-        {
+        else {
             alert('please enter invoice number');
         }
     }
 
 
-    console.log(Invoice,"invoice number");
+    console.log(Invoice, "invoice number");
     return (
         <div className="form-wrapper">
             <Formik {...props} validationSchema={validationSchema}>
@@ -50,7 +45,7 @@ const BuyersPageForm = (props) => {
                     <FormGroup>
                         <Field name="referenceNumber" type="text"
                             value={Invoice}
-                            onChange = {e => setInvoice(e.currentTarget.value)}
+                            onChange={e => setInvoice(e.currentTarget.value)}
                             className="form-control" />
                         <ErrorMessage
                             name="referenceNumber"

@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from "styled-components";
 
 import { useNavigate } from 'react-router-dom';
@@ -9,14 +9,13 @@ function FinancialOrder(props) {
     const [opacity, setOpacity] = useState(0.5);
 
 
-    const [role,setRole]=useState(props.option);
-    const Navigate=useNavigate();
-    
-    useEffect(()=>{
-      if(props.option!==role)
-      {
-        Navigate('/')
-      }
+    const [role, setRole] = useState(props.option);
+    const Navigate = useNavigate();
+
+    useEffect(() => {
+        if (props.option !== role) {
+            Navigate('/')
+        }
     })
 
     const checkboxHandler = () => {
