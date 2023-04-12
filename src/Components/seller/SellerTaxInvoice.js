@@ -140,7 +140,7 @@ function SellerTaxInvoice(props) {
 export default SellerTaxInvoice;
 
 const SellerInvoice1 = styled.div`
-padding: 2em 4em 0em;
+padding: 1em 4em 0em;
 .invoice{
     height: 100px;
     width: 1800px;

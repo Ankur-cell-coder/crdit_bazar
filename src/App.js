@@ -29,14 +29,14 @@ const logout = function () {
 }
 
 const App = () => {
-  let loggedIn = true;
+  let loggedIn = false;
 
   const [option, setOption] = useState("seller");
   (function () {
     let authToken = localStorage.getItem("JWT");
     if (authToken === null) {
       // This means that there ISN'T JWT and no user is logged in.
-      loggedIn = true;
+      loggedIn = false;
       axios.defaults.headers.common.Authorization = null;
     } else {
       /* This means that there IS a JWT so someone must be logged in

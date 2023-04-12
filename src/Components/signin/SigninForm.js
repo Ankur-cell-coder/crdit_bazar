@@ -63,7 +63,7 @@ const SignInForm = (props) => {
                     <div style={{ textAlign: 'center' }} ><p>or</p></div>
 
                     <div className="boxy" >
-                        <div className="google" >
+                        <div className="google"  >
                             <h6>Log In With Google</h6>
                         </div>
                     </div>
