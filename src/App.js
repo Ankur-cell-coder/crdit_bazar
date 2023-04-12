@@ -29,14 +29,14 @@ const logout = function () {
 }
 
 const App = () => {
-  let loggedIn = false;
+  let loggedIn = true;
 
   const [option, setOption] = useState("seller");
   (function () {
     let authToken = localStorage.getItem("JWT");
     if (authToken === null) {
       // This means that there ISN'T JWT and no user is logged in.
-      loggedIn = false;
+      loggedIn = true;
       axios.defaults.headers.common.Authorization = null;
     } else {
       /* This means that there IS a JWT so someone must be logged in
@@ -57,33 +57,60 @@ const App = () => {
     <Router>
       <div className="App">
         <header className="App-header">
-          
-          <Navbar bg="dark" variant="dark">
+
+          <Navbar bg="white" variant="dark">
             <Container>
               <Navbar.Brand>
+                <div  style=
+                  {{
+                    background: '#ec9006',
+                    width: '180px',
+                    height: '50px',
+                    display: 'flex',
+                    justifyContent: 'center'
+                   
+                  }}>
                 <Link to={"/"}
-                  className="nav-link">
+                  // className="nav-link"
+                  style=
+                  {{
+                    
+                    textDecoration: 'none', color: 'white', marginTop: '8px'
+                  }}>
                   Credit Bazaar
                 </Link>
+                </div>
               </Navbar.Brand>
 
 
 
             </Container>
             {loggedIn && <Nav className="justify-content-end">
-              
+
               <Nav>
                 <div>
-                  <select style={{border:"2px solid #ec9006",width:"200px",height:"40px",background:"white",marginRight:"100px"}} onChange={e => handleChange(e)}>
+                  <select style={{ border: "2px solid #ec9006", width: "200px", height: "40px", background: "white", marginRight: "100px" }} onChange={e => handleChange(e)}>
                     <option value="seller">Seller</option>
                     <option value="buyers">Buyer</option>
                     <option value="financial">Financial</option>
                   </select>
                 </div>
-                <Link to={"/"} onClick={logout}
-                  className="nav-link">
-                  Logout
-                </Link>
+                <div style={{
+                  width: '100px',
+                  height: '40px',
+                  border: '2px solid #ec9006',
+                  marginRight: '10px',
+                  display: 'flex',
+                  justifyContent: 'center'
+                }}>
+                  <Link to={"/"} onClick={logout}
+                    // className="navlink"
+                    style={{ textDecoration: 'none', color: 'black', marginTop: '5px' }}
+                  >
+                    Logout
+                  </Link>
+                </div>
+
               </Nav>
             </Nav>
             }

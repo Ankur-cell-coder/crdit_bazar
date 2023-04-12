@@ -40,30 +40,28 @@ const SellerPageForm = (props) => {
         <SellerPageForm1 className="formwrapper">
             <Formik {...props} validationSchema={validationSchema}>
                 <Form>
-                    {/* <br />
-                    Invoice Reference Number
-                    <br /> */}
-                    <div style={{display:'flex',flexDirection:'row'}}>
-                    <div >
-                    <FormGroup>
-                        <Field name="referenceNumber" type="text"
-                            value={Invoice}
-                            placeholder='Enter Invoice Reference Number'
-                            onChange={e => setInvoice(e.currentTarget.value)}
-                            className="formcontrol" />
-                        <ErrorMessage
-                            name="referenceNumber"
-                            className="d-block invalid-feedback"
-                            component="span"
-                        />
-                    </FormGroup>
-                    </div>
-                    <div style={{width:'30px',border:'1px solid gray',marginLeft:'5px'}}>
-                       
-                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'row' }}>
+                        <div  >
+                            <FormGroup>
+                                <Field name="referenceNumber" type="text"
+                                    value={Invoice}
+                                    placeholder='                       Enter Invoice Reference Number'
+                                    onChange={e => setInvoice(e.currentTarget.value)}
+                                    className="formcontrol" />
+                                <ErrorMessage
+                                    name="referenceNumber"
+                                    className="d-block invalid-feedback"
+                                    component="span"
+                                />
+                            </FormGroup>
+                        </div>
+                        <Button onClick={handleSubmit} style={{ width: '30px', border: '1px solid gray', marginLeft: '5px' ,height:"40px",width:"68px",background:'#ec9006' }} type="submit">
+                            Search
+                        </Button>
                     </div>
 
-                    
+
 
                     {/* <Button onClick={handleSubmit} variant="danger" size="lg"
                         block="block" type="submit">
@@ -84,6 +82,7 @@ justify-content:center;
 flex-direction:column;
 .formcontrol{
     width:480px;
+    height:40px;
 }
 
 `;
