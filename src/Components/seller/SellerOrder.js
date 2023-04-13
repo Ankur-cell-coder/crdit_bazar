@@ -31,7 +31,7 @@ function SellerOrder(props) {
     return (
         <SellerOrder1>
             <div>
-                <h6>Order Confirmation Seller</h6>
+                <h6>Order Confirmation</h6>
                 <div>Order ID: 123456789 Order Date/Time: February 28, 2023 at 10:15 AM EST Order Duration: 20-30 days from placing the offer</div>
                 <h6>Here are the details of your order:</h6>
                 <div>
@@ -74,6 +74,7 @@ padding: 2em 4em 0em;
     font-size: 16px;
     cursor: pointer;
     margin-top:20px;
+    width:220px;
 }
 
 `;

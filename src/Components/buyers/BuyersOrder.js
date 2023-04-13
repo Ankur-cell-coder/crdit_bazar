@@ -74,6 +74,7 @@ padding: 2em 4em 0em;
     font-size: 16px;
     cursor: pointer;
     margin-top:20px;
+    width:220px;
 }
 
 `;

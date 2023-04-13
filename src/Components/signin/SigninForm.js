@@ -41,7 +41,6 @@ const SignInForm = (props) => {
                         </FormGroup>
 
                         <div className="content" >
-
                             <span className="check" >
                                 <input type="checkbox" className="checkbox" />
                                 <span>Remember Password</span>
@@ -54,7 +53,7 @@ const SignInForm = (props) => {
                         </div>
 
                         <br />
-                        <Button className="btn" style={{ backgroundColor: '#ec9006', border: 'none' }} variant="danger" size="lg"
+                        <Button className="btn" style={{ backgroundColor: '#8EBE00', border: 'none' }} variant="danger" size="lg"
                             block="block" type="submit">
                             {props.children}
                         </Button>

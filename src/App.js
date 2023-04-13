@@ -50,7 +50,6 @@ const App = () => {
 
   const handleChange = (e) => {
     setOption(e.currentTarget.value);
-    // console.log('change');
   }
 
   return (
@@ -61,32 +60,26 @@ const App = () => {
           <Navbar bg="white" variant="dark">
             <Container>
               <Navbar.Brand>
-                <div  style=
+                <div style=
                   {{
+                    // background: '#8EBE00',
                     background: '#ec9006',
                     width: '180px',
                     height: '50px',
                     display: 'flex',
                     justifyContent: 'center'
-                   
                   }}>
-                <Link to={"/"}
-                  // className="nav-link"
-                  style=
-                  {{
-                    
-                    textDecoration: 'none', color: 'white', marginTop: '8px'
-                  }}>
-                  Credit Bazaar
-                </Link>
+                  <Link to={"/"}
+                    style=
+                    {{
+                      textDecoration: 'none', color: 'white', marginTop: '8px'
+                    }}>
+                    Credit Bazaar
+                  </Link>
                 </div>
               </Navbar.Brand>
-
-
-
             </Container>
             {loggedIn && <Nav className="justify-content-end">
-
               <Nav>
                 <div>
                   <select style={{ border: "2px solid #ec9006", width: "200px", height: "40px", background: "white", marginRight: "100px" }} onChange={e => handleChange(e)}>
@@ -104,13 +97,10 @@ const App = () => {
                   justifyContent: 'center'
                 }}>
                   <Link to={"/"} onClick={logout}
-                    // className="navlink"
-                    style={{ textDecoration: 'none', color: 'black', marginTop: '5px' }}
-                  >
+                    style={{ textDecoration: 'none', color: 'black', marginTop: '5px' }}>
                     Logout
                   </Link>
                 </div>
-
               </Nav>
             </Nav>
             }

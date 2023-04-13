@@ -134,9 +134,8 @@ function BuyersTaxInvoice(props) {
                 </div>
 
                 <div className='button1' style={{ marginLeft: "250px", height: "40px", width: "250px", marginTop: "250px" }}>
-                    <button className='button2'>Request for Offer</button>
-                    <button className='button2' onClick={() => Navigate('order')} style={{ marginTop: "10px", width: "185px" }}>Next</button>
-                    <button className='button2' onClick={() => Navigate(-1)} style={{ marginTop: "10px", width: "185px" }}>Go back</button>
+                    <button className='button2' onClick={() => Navigate('order')} >Request for Offer</button>
+                    <button className='button2' onClick={() => Navigate(-1)} style={{ marginTop: "10px" }}>Go back</button>
                 </div>
 
             </div>
@@ -175,6 +174,7 @@ padding: 2em 4em 0em;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
+    width:285px;
 }
 
 .part3{

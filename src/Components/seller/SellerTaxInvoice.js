@@ -18,7 +18,7 @@ function SellerTaxInvoice(props) {
         <SellerInvoice1>
             <div className='invoice'>
                 <div className='detail' style={{ height: "630px", width: "760px", background: "#E8E8E8" }}>
-                    <div className='heading' style={{ marginLeft: "350px" }}>Tax Invoice Seller</div>
+                    <div className='heading' style={{ marginLeft: "350px" }}>Tax Invoice</div>
                     <br />
                     <div className='heading2'>
                         <div>IRN:{data.IRN}</div>
@@ -129,9 +129,8 @@ function SellerTaxInvoice(props) {
                     </div>
                 </div>
                 <div className='button1' style={{ marginLeft: "250px", height: "40px", width: "250px", marginTop: "250px" }}>
-                    <button className='button2'>Request for Offer</button>
-                    <button className='button2' onClick={() => Navigate('order')} style={{ marginTop: "10px", width: "185px" }}>Next</button>
-                    <button className='button2' onClick={() => Navigate(-1)} style={{ marginTop: "10px", width: "185px" }}>Go back</button>
+                    <button className='button2' onClick={() => Navigate('order')} >Request for Offer</button>
+                    <button className='button2' onClick={() => Navigate(-1)} style={{ marginTop: "10px"}}>Go back</button>
                 </div>
             </div>
         </SellerInvoice1>
@@ -140,7 +139,7 @@ function SellerTaxInvoice(props) {
 export default SellerTaxInvoice;
 
 const SellerInvoice1 = styled.div`
-padding: 1em 4em 0em;
+padding: 2em 4em 0em;
 .invoice{
     height: 100px;
     width: 1800px;
@@ -163,6 +162,7 @@ padding: 1em 4em 0em;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
+    width:285px;
 }
 .part3{
     display:flex;
