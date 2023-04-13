@@ -29,6 +29,7 @@ const logout = function () {
 }
 
 const App = () => {
+  var colorvar="#8EBE00";
   let loggedIn = false;
 
   const [option, setOption] = useState("seller");
@@ -37,11 +38,13 @@ const App = () => {
     if (authToken === null) {
       // This means that there ISN'T JWT and no user is logged in.
       loggedIn = false;
+      colorvar="#8EBE00";
       axios.defaults.headers.common.Authorization = null;
     } else {
       /* This means that there IS a JWT so someone must be logged in
       and we can use their token to send the requests. */
       loggedIn = true;
+      colorvar="#ec9006";
       axios.defaults.headers.common.Authorization = `Bearer ${authToken}`;
 
     }
@@ -62,8 +65,8 @@ const App = () => {
               <Navbar.Brand>
                 <div style=
                   {{
-                    // background: '#8EBE00',
-                    background: '#ec9006',
+                   
+                    background: colorvar,
                     width: '180px',
                     height: '50px',
                     display: 'flex',

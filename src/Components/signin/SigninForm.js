@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { FormGroup, Button } from "react-bootstrap";
 import './SignInForm.css'
 
+
 const SignInForm = (props) => {
     const validationSchema = Yup.object().shape({
         username: Yup.string()
@@ -13,7 +14,9 @@ const SignInForm = (props) => {
     });
     console.log(props);
     return (
+        
         <div className="form-wrapper">
+            {/* <Navbar1/> */}
             <Formik {...props} validationSchema={validationSchema}>
                 <div className="box" >
                     <div className="title" >
